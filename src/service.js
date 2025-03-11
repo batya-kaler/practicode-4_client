@@ -1,5 +1,5 @@
 import axios from'./axiosConfig.ts'
-axios.defaults.baseURL = 'http://localhost:5256';
+axios.defaults.baseURL = process.env.NODE_ENV;
 
 export default {
   getTasks: async () => {

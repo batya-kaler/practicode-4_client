@@ -7,8 +7,7 @@ function App() {
 
   async function getTodos() {
     const todos = await service.getTasks();
-    // setTodos(todos);
-    setTodos(Array.isArray(todos) ? todos : []);
+    setTodos(todos);
   }
 
   async function createTodo(e) {
@@ -19,7 +18,7 @@ function App() {
   }
 
   async function updateCompleted(todo, isComplete) {
-    await service.setCompleted(todo.id, isComplete);
+    await service.setCompleted(todo.id, todo.name, isComplete);
     await getTodos();//refresh tasks list (in order to see the updated one)
   }
 
@@ -33,18 +32,6 @@ function App() {
   }, []);
 
   return (
-
-
-   
-
-
-
-
-
-
-
-
-
     <section className="todoapp">
       <header className="header">
         <h1>todos</h1>

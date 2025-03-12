@@ -7,7 +7,8 @@ function App() {
 
   async function getTodos() {
     const todos = await service.getTasks();
-    setTodos(todos);
+    // setTodos(todos);
+    setTodos(Array.isArray(todos) ? todos : []);
   }
 
   async function createTodo(e) {
@@ -32,6 +33,18 @@ function App() {
   }, []);
 
   return (
+
+
+   
+
+
+
+
+
+
+
+
+
     <section className="todoapp">
       <header className="header">
         <h1>todos</h1>

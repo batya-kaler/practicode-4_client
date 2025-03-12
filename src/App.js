@@ -7,8 +7,7 @@ function App() {
 
   async function getTodos() {
     const todos = await service.getTasks();
-    // setTodos(todos);
-       setTodos(Array.isArray(todos) ? todos : []);
+    setTodos(todos);
   }
 
   async function createTodo(e) {

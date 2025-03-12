@@ -1,27 +1,10 @@
-import axios from'./axiosConfig.ts'
+import axios from 'axios';
+
 axios.defaults.baseURL = process.env.NODE_ENV;
-
-axios.interceptors.response.use(
-  function (response) {
-    return response;
-  },
-  function (error) {
-    return Promise.reject(error);
-  })
-
 export default {
-  // getTasks: async () => {
-  //   const result = await axios.get(`/items`);
-  //   return result.data.Items;
-  // },
   getTasks: async () => {
-    try {
-      const result = await axios.get()
-      return result.data
-    }
-    catch (error) {
-      console.log(error)
-    }
+    const result = await axios.get(`/items`);
+    return result.data.Items;
   },
   addTask: async (name) => {
     console.log('addTask', name);

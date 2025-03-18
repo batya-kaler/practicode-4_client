@@ -4,7 +4,7 @@ export default
  {
   getTasks: async () => {
     const result = await axios.get(`/items`);
-    return result.data;
+    return result.data.Items;
   },
   addTask: async (name) => {
     console.log('addTask', name);
@@ -18,8 +18,7 @@ export default
     return result.data;
   },
 
-  deleteTask: async (id) => 
-    {
+  deleteTask: async (id) => {
     console.log('deleteTask', id);
     const result = await axios.delete(`/${id}`)
     return result.data;

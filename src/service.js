@@ -1,5 +1,5 @@
 import axios from 'axios';
-axios.defaults.baseURL = process.env.NODE_ENV;
+axios.defaults.baseURL = process.env.ENV;
 export default {
   getTasks: async () => {
     const result = await axios.get(`/items`);

@@ -27,7 +27,7 @@
 
 
 
-import axios from 'axios';
+import axios from 'axiosConfig.ts'
 axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 
 export default {
@@ -41,12 +41,11 @@ export default {
     return result.data;
   },
   setCompleted: async (id, isComplete) => {
-    console.log('setCompleted', { id, isComplete });
-    const result = await axios.patch(`/${id}`, null, { params: { IsComplete: isComplete } });
+   
+    const result = await axios.patch(`/${id}`, null, { params: {isComplete } });
     return result.data;
   },
   deleteTask: async (id) => {
-    console.log('deleteTask', id);
     const result = await axios.delete(`/${id}`);
     return result.data;
   }

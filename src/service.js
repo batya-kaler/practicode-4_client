@@ -1,6 +1,7 @@
 import axios from 'axios';
 axios.defaults.baseURL = process.env.REACT_APP_API_URL;
-export default {
+export default
+ {
   getTasks: async () => {
     const result = await axios.get(`/items`);
     return result.data.Items;
